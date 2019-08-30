@@ -4,11 +4,10 @@
   "description": "archive of Bhutanese Refugees Life",
   "main": "index.js",
   "scripts": {
-    "_COMMENT" : "Start below is used when deployed in heroku",
+    "_COMMENT": "Start below is used when deployed in heroku",
     "start": "node server",
-    "_COMMENT2" : "Server below is used by local  machine during development",
-    "server" : "nodemon server"
-
+    "_COMMENT2": "Server below is used by local  machine during development",
+    "server": "nodemon server"
   },
   "author": "Yadhap Dahal",
   "license": "ISC",
