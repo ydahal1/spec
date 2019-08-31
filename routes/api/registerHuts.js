@@ -1,11 +1,11 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 const router = express.Router();
-const Huts = require('../../models/Huts');
+const Huts = require('../../models/Huts', 'user');
 
 //@route POST api/huts
 //@des    register Huts route
-//@access  Public
+//@access  protected
 router.post('/',
     [
         check('familyLastName', 'Family Last Name is required').not().isEmpty(),
@@ -86,7 +86,8 @@ router.post('/',
 
         } catch (err) {
             //Schema throws err when wrond data type is sent to server
-            res.status(400).json({ errors: [{ msg: `${err.path} should be a ${err.kind}` }] })
+            return res.status(400).json({ errors: [err.errors] })
+
         }
 
     })

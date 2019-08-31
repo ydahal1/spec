@@ -79,9 +79,11 @@ const HutsSchema = new mongoose.Schema({
     numberOfFlags:{
         type: Number,
         default:0
-    }
+    },
+    
 })
 
+//This is where you specify which collection you want the data to be saved. 
 module.exports = Huts = mongoose.model('Huts', HutsSchema);
 
     
