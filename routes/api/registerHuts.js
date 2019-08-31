@@ -32,18 +32,24 @@ router.post('/',
             return res.status(400).json({ errors: errors.array() })
         }
         //Getting items from request to check if the hut is already registered
-
-        const { camp } = req.body;
-        const { sector } = req.body;
-        const { unit } = req.body;
-        const { hutNumber1 } = req.body;
+        const { familyLastName,
+            camp,
+            sector,
+            unit,
+            hutNumber1,
+            hutNumber2,
+            district,
+            village,
+            country,
+            state,
+            city,
+            phone,
+            members,
+            familyStory,
+            registerdBy } = req.body;
 
 
         try {
-            //Tests:
-            // console.log(familyLastName);
-            console.log(typeof registeredOn);
-            console.log(typeof familyStory)
 
             //Check if the hut is already registered
             let hut = await Huts.findOne({
@@ -54,8 +60,24 @@ router.post('/',
             if (hut) {
                 res.status(400).json({ errors: [{ msg: 'This hut is already registered' }] })
             } else {
+                hut = new Huts({
+                    familyLastName,
+                    camp,
+                    sector,
+                    unit,
+                    hutNumber1,
+                    hutNumber2,
+                    district,
+                    village,
+                    country,
+                    state,
+                    city,
+                    phone,
+                    members,
+                    familyStory,
+                    registerdBy
+                })
 
-                //I AM HERE ......
                 hut.save();
                 res.json(req.body);
 
@@ -63,8 +85,8 @@ router.post('/',
             }
 
         } catch (err) {
-            console.error(err.message);
-            res.status(500).send('server error')
+            //Schema throws err when wrond data type is sent to server
+            res.status(400).json({ errors: [{ msg: `${err.path} should be a ${err.kind}` }] })
         }
 
     })
