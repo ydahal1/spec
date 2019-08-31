@@ -15,7 +15,8 @@
     "config": "^3.2.2",
     "express": "^4.17.1",
     "express-validator": "^6.1.1",
-    "mongoose": "^5.6.11"
+    "mongoose": "^5.6.11",
+    "passport-facebook": "^3.0.0"
   },
   "devDependencies": {
     "concurrently": "^4.1.2",
