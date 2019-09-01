@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "moment": "^2.24.0",
+    "passport-facebook": "^3.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-moment": "^0.9.2",
@@ -32,5 +33,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy" : "http://localhost:5000"
+  "proxy": "http://localhost:5000"
 }

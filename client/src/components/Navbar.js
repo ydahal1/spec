@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 const Navbar = () => {
-    return ( 
-        <nav>
-            This is a nav bar
+    const wholeComponent = {
+        border: "1px solid black",
+        padding: "20px",
+        margin: " 20px"
+    }
+    return (
+        <div style={wholeComponent}>
+            <nav>
+                This is a nav bar
         </nav>
-     );
+        </div>
+    );
 }
- 
+
 export default Navbar;
