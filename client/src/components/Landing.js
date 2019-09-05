@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchHut from './SearchHut';
-import LoginWithSocial from './loginWithButtons';
+import LoginWithSocial from './loginPanel';
 
 class Landing extends Component {
     state = {}

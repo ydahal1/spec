@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import FacebookBtn from './facebookBtn';
+
 class LoginWithSocial extends Component {
     state = {}
     render() {
@@ -14,8 +16,9 @@ class LoginWithSocial extends Component {
                 </div>
                 <div>
                     <button>Sign in with google</button>
-                    <a href={'auth/facebook'}> sig in with facebook</a>
                 </div>
+                    <FacebookBtn />
+               
             </div >
         );
     }

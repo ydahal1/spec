@@ -1,7 +1,7 @@
 const express = require('express');
-const passport = require('passport');
-const FacebookStrategy = require('passport-facebook').Strategy;
-const fbAuth = require("../../config/fbAuth.js")
+// const passport = require('passport');
+// const FacebookStrategy = require('passport-facebook').Strategy;
+// const fbAuth = require("../../config/fbAuth.js")
 const router = express.Router();
 
 
