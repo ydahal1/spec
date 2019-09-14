@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import {Redirect} from 'react-router';
 
 import FacebookLogin from 'react-facebook-login';
 
@@ -11,53 +11,48 @@ class Facebook extends Component {
         name : '',
         email : '',
         picture: '',
-        isAuthenticated: false
+        loggedInWithFacebook: false
      }
+    responseFacebook = response => {
+        this.setState({
+            isLoggedIn : true,
+            userID: response.userID,
+            name: response.name,
+            email: response.email,
+            picture: response.picture.data.url
+        })
+    }
 
-     responseFacebook = response => {
-         this.setState({
-             isLoggedIn : true,
-             userID: response.userID,
-             name: response.name,
-             email: response.email,
-             picture: response.picture.data.url
-         })
-     }
+     
      componentClicked = () =>{
-         console.log("Component clicked")
+         var userInfo = localStorage.getItem("userData")
+         alert(userInfo)
+         window.location="http://www.google.com"
      }
     render() { 
-        <Redirect to="/userRegistration"/>
         let fbContent;
          if(this.state.isLoggedIn) {
              axios.post('/api/authemticateUser',{email : this.state.email}).then(
                  res =>{
                      console.log(res);
-                     console.log(res.data.userRegistered);
-                     
-
+                     if(!res.data.userRegistered){
+                         this.setState({
+                             loggedInWithFacebook : true
+                         })
+                        
+                         localStorage.setItem("userData", JSON.stringify(this.state))
+                     }
                  }
-                 
              )
 
-            fbContent = (
-                <div style={{
-                    width: '400px',
-                    margin : 'auto',
-                    background : '#f4f4f4',
-                    padding: '20px'
-                }}>
-                    <img src={this.state.picture} alt={this.state.name} />
-                    <h2> Welcome {this.state.name} </h2>
 
-                </div>
-            );
+          
        
          }else{
              fbContent = (
                  <FacebookLogin
                     appId= '716898738735146'
-                    autoLoad = {true}
+                    // autoLoad = {true}
                     fields="name,email,picture"
                     onClick={this.componentClicked}
                     callback = {this.responseFacebook}
@@ -65,12 +60,11 @@ class Facebook extends Component {
                  />
              )
          
-
          }
         return (
             <div>
-                {fbContent}
-
+                {(this.state.loggedInWithFacebook) ? <Redirect to='/userRegistration' /> : fbContent}
+            
             </div>
           );
     }

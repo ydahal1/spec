@@ -12,7 +12,7 @@ const Navbar = () => {
     return (
         <div style={wholeComponent}>
             <nav>
-                This is a nav ba.
+                Our camp
         </nav>
         </div>
     );
