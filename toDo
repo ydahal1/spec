@@ -1,0 +1,9 @@
+When user clicks the login with social icon and does not login by cancelling - handle error
+hide cliend id for facebook, currently visible to all users
+
+
+
+notes:-
+killing node process - sudo pkill node
+for post man - Headers [ key : contentType, value: application/json]
+binding functions  - this.onChange = this.onChange.bind(this)

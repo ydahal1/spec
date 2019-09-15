@@ -19,7 +19,7 @@ app.use('/api/registerHuts', require('./routes/api/registerHuts'));
 app.use('/api/renderHuts', require('./routes/api/renderHuts'));
 app.use('/api/registerUser', require('./routes/api/registerUser'));
 app.use('/api/renderUser', require('./routes/api/renderUser'));
-app.use('/api/facebookAuth', require('./routes/api/facebookAuth'))
+app.use('/api/authenticateUser', require('./routes/api/authenticateUser'))
 
 
 

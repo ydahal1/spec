@@ -7,17 +7,25 @@ class SearchHut extends Component {
             padding: "20px",
             margin: " 20px"
         }
+
+        const inputGroups = {
+            margin: "10px"
+        }
+
+        const inputField = {
+            marginRight: "10px"
+        }
         return (
 
             <div style={wholeComponent}>
-                <div>
+                <div style={inputGroups}>
                     <button>Visit your hut</button>
                 </div>
-                <div>
+                <div style={inputGroups}>
                     <form>
                         <div>
-                            <label>Camp : </label>
-                            <select>
+                            <select style={inputField}>
+                                <option>Camp</option>
                                 <option>Beldaing-I</option>
                                 <option>Beldaing-II</option>
                                 <option>Beldaing-III</option>
@@ -26,10 +34,9 @@ class SearchHut extends Component {
                                 <option>Pathri</option>
                                 <option>Timai</option>
                             </select>
-                        </div>
-                        <div>
-                            <label>Sector : </label>
-                            <select>
+                            
+                            <select style={inputField}>
+                            <option>Sector : </option>
                                 <option>A</option>
                                 <option>B</option>
                                 <option>C</option>
@@ -40,10 +47,9 @@ class SearchHut extends Component {
                                 <option>H</option>
                                 <option>I</option>
                             </select>
-                        </div>
-                        <div>
-                            <label>Unit : </label>
-                            <select>
+                            <select style={inputField}>
+                            <option>Unit : </option>
+
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
