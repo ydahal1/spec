@@ -37,6 +37,9 @@ const UsersSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    image:{
+        type: String,
+    },
     hutsRegistered : {
         type: Number,
         default: 0

@@ -31,6 +31,8 @@ class LoginWithSocial extends Component {
                         window.location = "/registerHut"
                     } else {
                         //if the user is not already registered, send user to complete registraton
+                        // Also clear anything in locl storage
+                        localStorage.clear();
                         window.location = "/userRegistration"
                     }
                 }

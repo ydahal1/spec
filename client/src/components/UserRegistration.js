@@ -5,17 +5,17 @@ class UserRegistration extends Component {
         super()
     
     this.state = { 
-        facebookUserID: "6556+6",
-        firstName: "yadhap",
-        lastName:"dahal",
-        email: "gjgjg",
-        imageUrl: "https://sheffieldsteel.net/wp-content/uploads/2017/04/executive-placeholder.jpg",
-        camp: "gjgj",
-        sector:"gjgj",
-        unit:"1",
-        hutNumber1: "452",
-        hutNumber2: "421",
-        contactNumber: "4545454"
+        facebookUserID: "",
+        firstName: "",
+        lastName:"",
+        email: "",
+        imageUrl: "",
+        camp: "",
+        sector:"",
+        unit:"",
+        hutNumber1: "",
+        hutNumber2: "",
+        contactNumber: ""
      }
      this.onChange = this.onChange.bind(this)
      this.onSubmit = this.onSubmit.bind(this);
@@ -54,22 +54,25 @@ class UserRegistration extends Component {
 
      //When the component mounts
     componentDidMount(){
-        let userDetails = localStorage.getItem("userData")
+        let userDetails = localStorage.getItem("userInfo")
         userDetails = JSON.parse(userDetails);
+        let name = userDetails.name.split(' ');
+
+
         if(userDetails){
-            console.log("printing user details : " + userDetails.name);
             this.setState({
                 facebookUserID : userDetails.userID,
-                firstName : userDetails.name,
-                lastName : userDetails.name,
+                firstName : name[0],
+                lastName : name[1],
                 email : userDetails.email,
-                imageUrl: userDetails.picture
+                imageUrl: userDetails.picture.data.url
             })
         }
     }
 
    
     render() { 
+        //css
         const wholeComponent = {
             border: "1px solid black",
             padding: "20px",
