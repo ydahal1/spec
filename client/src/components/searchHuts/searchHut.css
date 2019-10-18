@@ -1,0 +1,56 @@
+.form-control {
+  font-size: 14px;
+  border: 2px solid black;
+  color: black;
+  background: whitesmoke;
+  font-weight: bolder;
+}
+.form-control:hover {
+  padding-right: 24px;
+  padding-left: 8px;
+}
+
+.btn {
+  background: green;
+  color: white;
+  /* border: 1px solid black; */
+  border: none;
+  text-align: center;
+  /* font-size: 32px;
+  padding: 16px;
+  width: 220px; */
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+}
+
+.btn:after {
+  opacity: 0;
+  /* top: 14px; */
+  /* right: -20px; */
+  transition: 0.5s;
+  border: none;
+}
+
+.btn:hover {
+  padding-right: 24px;
+  padding-left: 8px;
+  background: orangered;
+  border: none;
+}
+
+.btn:hover:after {
+  opacity: 1;
+  right: 10px;
+  border: none;
+}
+
+.errors {
+  color: red;
+}
+
+.form-control-err {
+  border: 2px solid red;
+  color: red;
+}

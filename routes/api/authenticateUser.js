@@ -21,6 +21,9 @@ router.post('/',[check('email', 'E-mail is incorrect').not().isEmpty()] ,async(r
                 });
                 if (user) {
                     res.send({userRegistered : true})
+
+                    //the data below should be stored in global state
+                    console.log(user)
                 }else{
                     res.send({userRegistered : false})
                 }

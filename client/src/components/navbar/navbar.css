@@ -1,0 +1,11 @@
+.NavBtns {
+  color: white;
+  margin: 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.NavBtns:hover {
+  color: red;
+  text-decoration: none;
+}

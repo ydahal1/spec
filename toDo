@@ -1,5 +1,7 @@
-When user clicks the login with social icon and does not login by cancelling - handle error
+completed : - When user clicks the login with social icon and does not login by cancelling - handle error
 hide cliend id for facebook, currently visible to all users
+handle error when user attempts registration and does not enter correct or complete data
+only i can sign in change settings in Facebook app
 
 
 

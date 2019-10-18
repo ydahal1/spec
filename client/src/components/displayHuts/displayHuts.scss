@@ -1,0 +1,51 @@
+.wholeComponent {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+}
+
+.card {
+  padding: 10px;
+}
+
+/* Bootstrap 4 breakpoints & gutter */
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px
+// ) !default;
+
+// $grid-gutter-width: 0px !default;
+
+// number of cards per line for each breakpoint
+// $cards-per-line: (
+//   xs: 1,
+//   sm: 3,
+//   md: 4,
+//   lg: 9,
+//   xl: 6
+// );
+
+// @each $name, $breakpoint in $grid-breakpoints {
+//   @media (min-width: $breakpoint) {
+//     .card-deck .card {
+//       flex: 0 0
+//         calc(#{50 / map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
+//     }
+//   }
+// }
+
+// .container {
+//   margin: 0px;
+// }
+
+// .card-columns {
+//   @include media-breakpoint-only(lg) {
+//     column-count: 4;
+//   }
+//   @include media-breakpoint-only(xl) {
+//     column-count: 5;
+//   }
+// }

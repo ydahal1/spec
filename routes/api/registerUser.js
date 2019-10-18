@@ -8,20 +8,19 @@ const Users = require('../../models/Users');
 //@access  protected
 router.post('/',
     [
-        check('firstName', 'Incorrect first name').not().isEmpty().isAlpha(),
-        check('lastName', 'Incorrect last name').not().isEmpty().isAlpha(),
+        // check('firstName', 'Incorrect first name ....').not().isEmpty().isAlpha(),
+        // check('lastName', 'Incorrect last name ...').not().isEmpty().isAlpha(),
         check('camp', 'Incorrect camp').not().isEmpty(),
         check('sector', 'Please select Sector').not().isEmpty().isAlpha(),
         check('unit', 'Please select Unit').not().isEmpty(),
-        check('hutNumber1', 'Hut number is incorrect').not().isEmpty(),
-        check('hutNumber2', 'Hut number is incorrect').not().isEmpty(),
+        check('hutNumber1', 'Hut number is incorrect').not().isEmpty()
     ],
     async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() })
         }
-        //Getting items from request to check if the hut is already registered
+        //Getting items from request to check if the user is already registered
         const { 
             firstName,
             lastName,
@@ -40,9 +39,9 @@ router.post('/',
             let user = await Users.findOne({
                 email
             });
-            // if the hut is found to be registered
+            // if the email is found to be registered
             if (user) {
-                res.status(200).json({ message: [{ msg: 'User is already registered take him to dash board from here' }] })
+                res.status(200).json({ userRegistered: true  })
             } else {
                 user = new Users({
                     firstName,
